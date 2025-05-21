@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "firstName",
+    "label": "Ime",
+    "type": "text",
+    "placeholder": "Unesite ime",
+    "required": true
+  },
+  {
+    "id": 2,
+    "name": "lastName",
+    "label": "Prezime",
+    "type": "text",
+    "placeholder": "Unesite prezime",
+    "required": true
+  },
+  {
+    "id": 3,
+    "name": "email",
+    "label": "Email",
+    "type": "email",
+    "placeholder": "Unesite email",
+    "required": true
+  },
+  {
+    "id": 4,
+    "name": "password",
+    "label": "Lozinka",
+    "type": "password",
+    "placeholder": "Unesite lozinku",
+    "required": true
+  },
+  {
+    "id": 5,
+    "name": "confirmPassword",
+    "label": "Potvrdite lozinku",
+    "type": "password",
+    "placeholder": "Ponovno unesite lozinku",
+    "required": true
+  }
+]
