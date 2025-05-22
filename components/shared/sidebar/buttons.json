@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "dashboard",
+    "title": "Dashboard",
+    "icon": "House"
+  },
+  {
+    "id": 2,
+    "name": "facebook",
+    "title": "Facebook",
+    "icon": "Facebook"
+  },
+  {
+    "id": 3,
+    "name": "instagram",
+    "title": "Instagram",
+    "icon": "Instagram"
+  },
+  {
+    "id": 4,
+    "name": "x",
+    "title": "X",
+    "icon": "House"
+  },
+  {
+    "id": 5,
+    "name": "tiktok",
+    "title": "TikTok",
+    "icon": "House"
+  }
+]

@@ -1,11 +1,14 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 // Axios instance
 const api = axios.create({
-  baseURL:
-    "https://postify-backend-milijanovic2529-4n76fkfo.leapcell.dev/api/v1",
+  baseURL: "https://api.web-dev.rs/api/v1",
+  //baseURL: "http://192.168.0.101:3000/api/v1",
   headers: {
     "Content-Type": "application/json",
+    Accept: "application/json",
+    Authorization: `Bearer ${Cookies.get("Bearer")}`,
   },
 });
 

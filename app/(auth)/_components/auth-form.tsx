@@ -25,7 +25,7 @@ import { z } from "zod";
 import { FieldValues, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { post } from "@/lib";
+import { handleAuth, post } from "@/lib";
 import loginFields from "./login-fields.json";
 import registerFields from "./register-fields.json";
 
@@ -207,9 +207,9 @@ const LoginForm = () => {
   const { form, mutate, isPending } = useAuthForm<LoginForm>(
     loginSchema,
     (data) =>
-      post("/users/login", data).then((res) => {
+      post("/users/login", data).then(async (res) => {
         if (res) {
-          window.location.href = "/dashboard";
+          await handleAuth(res?.payload?.bearer_token);
           return res;
         }
       }),
