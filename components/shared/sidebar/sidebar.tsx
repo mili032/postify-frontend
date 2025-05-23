@@ -4,6 +4,8 @@ import { Button } from "@/components/ui";
 import { LucideIcon, icons } from "lucide-react";
 import Image from "next/image";
 import buttons from "./buttons.json";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type ButtonProps = {
   id: number;
@@ -33,7 +35,7 @@ export const Sidebar = (): JSX.Element => {
 };
 
 const SidebarMenu = (): JSX.Element => {
-  const [activeButton, setActiveButton] = useState<string | null>("dashboard");
+  const active_page = usePathname();
 
   return (
     <div className={`flex flex-col gap-1 mt-10`}>
@@ -41,14 +43,16 @@ const SidebarMenu = (): JSX.Element => {
         const Icon = icons?.[icon] as LucideIcon;
         return (
           <Button
-            onClick={() => setActiveButton(name)}
             variant={`default`}
             key={id}
             name={name}
-            className={`justify-start h-[3rem] ${activeButton === name ? `bg-primary text-primary-foreground font-semibold` : `bg-[#FAFAFA] shadow-none text-muted-foreground hover:bg-primary hover:text-primary-foreground`}`}
+            className={`justify-start h-[3rem] ${active_page === `/${name}` ? `bg-primary text-primary-foreground font-semibold` : `bg-[#FAFAFA] shadow-none text-muted-foreground hover:bg-primary hover:text-primary-foreground`}`}
+            asChild
           >
-            <Icon strokeWidth={3} />
-            <span className={`text-sm font-semibold`}>{title}</span>
+            <Link href={`/${name}`}>
+              <Icon strokeWidth={3} />
+              <span className={`text-sm font-semibold`}>{title}</span>
+            </Link>
           </Button>
         );
       })}

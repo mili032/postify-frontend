@@ -50,6 +50,7 @@ export const Cards = (): JSX.Element => {
 
   return (
     <div
+      id={`some-element`}
       className={`grid grid-cols-2 md:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3 gap-5`}
     >
       {data?.map(({ id, title, text, icon }) => {

@@ -34,7 +34,9 @@ export const SectionCard = ({
 
   return (
     <Card className={`w-full shadow-none gap-0 pb-0 overflow-hidden`}>
-      <CardHeader className={`flex items-center justify-between px-5`}>
+      <CardHeader
+        className={`flex max-md:flex-col md:items-center justify-between px-5`}
+      >
         <div className={`space-y-1`}>
           <CardTitle className={`text-lg leading-tight`}>
             {header_card_title}

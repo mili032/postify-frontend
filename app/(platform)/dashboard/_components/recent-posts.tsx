@@ -99,7 +99,7 @@ export const RecentPosts = (): JSX.Element => {
       }}
       card_content={{
         children: (
-          <div className={`flex flex-col gap-5 mt-4 px-4 pb-4`}>
+          <div className={`flex flex-col gap-5 mt-4 px-4 pb-4 w-full`}>
             {posts.map((post) => (
               <RecentPost
                 key={post.id}
@@ -131,7 +131,7 @@ const RecentPost = ({
   platform,
 }: Post): JSX.Element => {
   return (
-    <div className="flex flex-col gap-2 border hover:shadow-sm p-2 rounded-md transition-all duration-200 ease-in-out cursor-pointer">
+    <div className="flex max-md:overflow-hidden flex-col gap-2 border hover:shadow-sm p-2 rounded-md transition-all duration-200 ease-in-out cursor-pointer relative">
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <img
@@ -139,19 +139,21 @@ const RecentPost = ({
             alt={title}
             className="w-12 h-12 rounded-md object-cover"
           />
-          <div className="flex flex-col">
+          <div className="flex flex-col max-md:max-w-[12.188rem]">
             <h3 className="text-sm font-semibold">{title}</h3>
-            <p className="text-xs text-muted-foreground">{text}</p>
+            <p className="text-xs text-muted-foreground line-clamp-3 max-md:mt-1">
+              {text}
+            </p>
           </div>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-end max-md:absolute max-md:bg-muted max-md:px-3 max-md:rounded-bl-lg max-md:py-0.5 max-md:top-0 max-md:right-0">
           <span className="text-xs text-muted-foreground">{platform}</span>
           <span className="text-xs text-muted-foreground">
             {new Date(createdAt).toLocaleDateString()}
           </span>
         </div>
       </div>
-      <div className="flex items-center *:px-2 pl-2 divide-x divide-border">
+      <div className="flex items-center *:px-2 pl-2 divide-x divide-border mt-2">
         <div className="flex items-center gap-1">
           <span className="text-xs !pl-0">{comments} Komentara</span>
           <MessageSquare strokeWidth={2} size={15} />
