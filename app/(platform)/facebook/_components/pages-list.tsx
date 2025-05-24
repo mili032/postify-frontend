@@ -49,8 +49,7 @@ export const PagesList = (): JSX.Element => {
     | undefined;
 
   const FACEBOOK_APP_ID = "1296600068696051";
-  const REDIRECT_URI =
-    "https://64da-109-92-150-237.ngrok-free.app/api/v1/auth/facebook/callback";
+  const REDIRECT_URI = "https://api.twibbio.com/api/v1/auth/facebook/callback";
 
   const facebookLogin = () => {
     window.location.href = `https://www.facebook.com/v19.0/dialog/oauth?client_id=${FACEBOOK_APP_ID}&redirect_uri=${REDIRECT_URI}&scope=pages_show_list,pages_manage_posts&state=${user?.token}`;

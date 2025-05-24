@@ -28,6 +28,7 @@ export const Sidebar = ({ className }: { className?: string }): JSX.Element => {
         <Image
           src={`/logo.svg`}
           alt={`logo`}
+          priority
           width={150}
           height={100}
           className={``}

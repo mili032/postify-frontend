@@ -192,6 +192,7 @@ export const AuthForm = (): JSX.Element => {
     <div className="max-lg:col-span-2 col-span-1 flex flex-col items-start mx-auto max-w-lg w-full py-10">
       <Image
         src="/logo.svg"
+        priority
         alt="Postify"
         width={200}
         height={200}

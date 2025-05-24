@@ -13,6 +13,7 @@ export default function AuthLayout({
           <Image
             src={`/login-image-clock.svg`}
             alt={`Postify`}
+            priority
             width={0}
             height={0}
             className={`w-full object-cover ml-auto`}
