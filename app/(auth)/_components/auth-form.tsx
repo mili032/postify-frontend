@@ -195,7 +195,7 @@ export const AuthForm = (): JSX.Element => {
         alt="Postify"
         width={200}
         height={200}
-        className="mb-15 max-lg:w-full max-lg:drop-shadow-2xl"
+        className="mb-15 max-lg:w-full"
       />
       {isLogin ? <LoginForm /> : <RegisterForm />}
     </div>

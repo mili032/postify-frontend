@@ -6,6 +6,7 @@ import Image from "next/image";
 import buttons from "./buttons.json";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { cn } from "@/lib";
 
 type ButtonProps = {
   id: number;
@@ -15,10 +16,13 @@ type ButtonProps = {
 };
 const buttons_list = buttons as ButtonProps[];
 
-export const Sidebar = (): JSX.Element => {
+export const Sidebar = ({ className }: { className?: string }): JSX.Element => {
   return (
     <section
-      className={`w-full px-5 max-w-[15rem] bg-[#FAFAFA] py-5 border-r max-md:hidden`}
+      className={cn(
+        `w-full px-5 max-w-[15rem] bg-[#FAFAFA] py-5 border-r`,
+        className,
+      )}
     >
       <div className={`sticky top-5`}>
         <Image

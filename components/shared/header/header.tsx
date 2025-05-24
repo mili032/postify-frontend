@@ -1,12 +1,15 @@
 "use client";
-import { JSX } from "react";
+import { JSX, useEffect, useState } from "react";
 import { useQueries } from "@tanstack/react-query";
 import { get, handleAuth } from "@/lib";
 import { Avatar, AvatarFallback } from "@/components/ui";
-import { HeaderUser } from "@/components/shared";
+import { HeaderUser, Sidebar } from "@/components/shared";
 import { usePathname } from "next/navigation";
+import { Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Header = (): JSX.Element => {
+  const [sheetOpen, setSheetOpen] = useState<boolean>(false);
   const pathname = usePathname();
   let slug = pathname?.split("/")[1];
 
@@ -65,13 +68,17 @@ export const Header = (): JSX.Element => {
     ],
   });
 
+  useEffect(() => {
+    setSheetOpen(false);
+  }, [pathname]);
+
   return (
     <div
-      className={`flex items-center justify-between sticky top-0 z-50 py-0 md:py-3 bg-white border-b`}
+      className={`flex items-center justify-between sticky top-0 z-50 py-0 max-md:pb-2 md:py-3 bg-white border-b`}
     >
       {is_loading_page ? (
         <div
-          className={`w-[30rem] h-10 bg-slate-200 animate-pulse rounded-md`}
+          className={`w-full md:w-[30rem] h-10 bg-slate-200 animate-pulse rounded-md`}
         />
       ) : (
         <div className={`space-y-1`}>
@@ -99,6 +106,16 @@ export const Header = (): JSX.Element => {
             </span>
           </div>
         )}
+      </div>
+      <div className={`md:hidden`}>
+        <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+          <SheetTrigger>
+            <Menu onClick={() => setSheetOpen(!sheetOpen)} size={24} />
+          </SheetTrigger>
+          <SheetContent>
+            <Sidebar className={`!max-w-full !h-full`} />
+          </SheetContent>
+        </Sheet>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const PlatformLayout = async ({
 
   return (
     <div className={`flex gap-10 min-h-svh`}>
-      <Sidebar />
+      <Sidebar className={`max-md:hidden`} />
       <div className={`flex-1 my-2 md:my-5 max-md:px-2 md:mr-10`}>
         <Header />
         <div className={`overflow-y-auto`}>{children}</div>
