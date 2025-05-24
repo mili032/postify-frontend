@@ -14,10 +14,10 @@ type SectionCardProps = {
   card_header: {
     header_card_title: string;
     header_card_description: string;
-    children: React.ReactNode;
+    children?: React.ReactNode;
   };
   card_content: {
-    children: React.ReactNode;
+    children?: React.ReactNode;
   };
 };
 export const SectionCard = ({

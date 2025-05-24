@@ -16,7 +16,7 @@ export const Header = (): JSX.Element => {
   ] = useQueries({
     queries: [
       {
-        queryKey: [`user`],
+        queryKey: [`user`, pathname],
         queryFn: async (): Promise<HeaderUser | null> => {
           return get(`/users/verify-token`)
             ?.then(async (res) => {
@@ -67,7 +67,7 @@ export const Header = (): JSX.Element => {
 
   return (
     <div
-      className={`flex items-center justify-between sticky top-0 z-50 py-3 bg-white border-b`}
+      className={`flex items-center justify-between sticky top-0 z-50 py-0 md:py-3 bg-white border-b`}
     >
       {is_loading_page ? (
         <div

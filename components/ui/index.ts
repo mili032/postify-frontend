@@ -11,3 +11,6 @@ export * from "./tabs";
 export * from "./tooltip";
 export * from "./avatar";
 export * from "./calendar";
+export * from "./table";
+export * from "./popover";
+export * from "./textarea";

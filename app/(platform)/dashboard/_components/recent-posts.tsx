@@ -99,7 +99,7 @@ export const RecentPosts = (): JSX.Element => {
       }}
       card_content={{
         children: (
-          <div className={`flex flex-col gap-5 mt-4 px-4 pb-4 w-full`}>
+          <div className={`flex flex-col gap-5 mt-5 px-5 pb-5 w-full`}>
             {posts.map((post) => (
               <RecentPost
                 key={post.id}
